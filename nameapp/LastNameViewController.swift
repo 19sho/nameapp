@@ -10,6 +10,7 @@ import UIKit
 
 class LastNameViewController: UIViewController {
 
+    @IBOutlet weak var lastNameField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,7 +24,7 @@ class LastNameViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if let lastName = lastNameField.text {
             if let helloController = segue.destination as? HelloViewController {
-                                 
+                helloController.name = helloController.name + " " + lastName
             }
         }
     }
